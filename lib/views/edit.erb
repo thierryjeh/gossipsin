@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+   
+    <meta charset="utf-8">
+   
+
+    <title>Editer un potin</title>
+  </head>
+  <body>
+   
+      <h1>The Gossip Project</h1>
+       
+           <a href="/">Affiche les potins </a>
+          </li>
+           <a class="nav-link" href="/gossips/new/">Créer un potin</a>
+          </li>
+          </ul>
+      </div>
+    </nav>
+
+    <h1>Editer un potin !</h1>
+    <br/> 
+    <h4>Met à jour le potin <%= id%> via le formulaire ci-dessous</h4> 
+    <form action='/gossips/edit/' method='POST'> 
+        <% gossips.each do |gossip| %>
+            Modifie le nom :  <input type='text' name='gossip_author' value="<%= gossip.author %>" /><br/> 
+            Balances ton potin : <input type='text' name='gossip_content' value="<%= gossip.content %>" /><br/> 
+         <% end %>
+        <input type='hidden' name='id' value='<%= id %>'/>
+        <input class="btn btn-primary" type='submit'/> 
+    </form> 
+
+  </body>
+</html>

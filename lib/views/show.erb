@@ -1,0 +1,34 @@
+<!doctype html>
+<html >
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+
+    <title>The Gossip Project - Show gossip</title>
+  </head>
+  <body>
+
+        <h1>The Gossip Project</h1>
+  
+      <a class="nav-link" href="/">Affiche les potins </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/gossips/new/">Créer un potin</a>
+        </li>
+        </ul>
+        </div>
+    </nav>
+
+    <h2> POTIN !</h2>
+    <% gossips.each do |gossip| %>
+        <p> Voici le potin n° <%= id%><br/>
+        Son auteur : <%= gossip.author %><br/>
+        Le contenu du potin : <%= gossip.content %>
+        </p>
+    <% end %>
+    <a href="<%= id%>/edit">Editer le potin</a>
+    <a href="/">Lien pour revenir à la page des potins</a>
+
+   
+  </body>
+</html>
